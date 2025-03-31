@@ -9,7 +9,7 @@ def write_refresh(string):
     sys.stdout.flush()
 
 def fetch_markets(limit=100, max_retries=5):
-    base_url = "https://gamma-api.polymarket.com/markets"
+    base_url = "https://gamma-api.polymarket.com/events"
     print(f"Started fetching from {base_url}")
     offset = 0
 
@@ -46,7 +46,7 @@ def fetch_markets(limit=100, max_retries=5):
     return markets
 
 def save_markets(markets):
-    filename = f"data/markets_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json"
+    filename = f"data/events_{datetime.now().strftime("%Y%m%d_%H%M%S")}.json"
     # Speichern der gesammelten Daten in einer JSON-Datei
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(markets, file, indent=4, ensure_ascii=False)

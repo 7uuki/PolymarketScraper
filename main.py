@@ -5,7 +5,6 @@ import time
 
 import fetchMarketData
 
-
 def main():
     fetchMarketData.fetch_and_save()
 
